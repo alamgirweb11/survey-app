@@ -9,6 +9,7 @@
         </p>
       </div>
       <form class="mt-8 space-y-6" @submit="login">
+      <p>{{ errorMsg }}</p>
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
@@ -47,6 +48,7 @@
 import { LockClosedIcon } from '@heroicons/vue/solid'
 import { useRouter } from 'vue-router'
 import store from '../../store'
+import {ref} from 'vue'
 
 const router = useRouter()
 const user = {
@@ -55,11 +57,17 @@ const user = {
          remember: false
     }
 
+let errorMsg = ref('')
+
 function login(e){
     e.preventDefault();
      store.dispatch('login', user)
      .then(() => {
         router.push({name: 'Dashboard'})
      })  
+      .catch(err => {
+      errorMsg.value = err.response.data.error
+      console.log(errorMsg.value)
+    })
 }
 </script>
