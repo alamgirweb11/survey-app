@@ -25,6 +25,14 @@ const store = createStore({
                             commit('setUser', data)
                             return data;
                    }) 
+               },
+
+               logout({commit}){
+                   return axiosClient.post('/logout')
+                   .then(response => {
+                       commit('logout')
+                        return response
+                   })
                }
        },
 
