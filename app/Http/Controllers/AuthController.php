@@ -21,6 +21,10 @@ class AuthController extends Controller
              ]
          ]);
 
+     //     if($data){
+     //          return response()->json(['errors' => $data], 422);
+     //     };
+
          $user = User::create([
              'name' => $data['name'],
              'email' => $data['email'],
@@ -31,7 +35,8 @@ class AuthController extends Controller
 
          return response([
              'user' => $user,
-             'token' => $token
+             'token' => $token,
+          //    'errors' => $data
          ]);
     }
 
