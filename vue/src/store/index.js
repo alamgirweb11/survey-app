@@ -4,11 +4,11 @@ import axiosClient from '../axios'
 const tempSurveys = [
         {
           id: 1,
-          title: "TheCodeholic YouTube channel content",
+          title: "The content has been loaded.",
           slug: "thecodeholic-youtube-channel-content",
           status: "draft",
-          image: 'https://pbs.twimg.com/profile_images/1118059535003017221/9ZwEYqj2_400x400.png',
-          description: "My name is Zura.<br>I am Web Developer with 9+ years of experience, free educational content creator, CTO, Lecturer and father of two wonderful daughters.<br><br>The purpose of the channel is to share my several years of experience with beginner developers.<br>Teach them what I know and make my experience as a lesson for others.",
+          image: 'https://via.placeholder.com/350x150',
+          description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
           created_at: "2021-12-20 18:00:00",
           updated_at: "2021-12-20 18:00:00",
           expire_date: "2021-12-31 18:00:00",
@@ -128,17 +128,6 @@ const tempSurveys = [
           updated_at: "2021-12-21 14:00:00",
           expire_date: "2021-12-31 00:00:00",
         },
-        {
-          id: 4,
-          title: "bootstrap 4",
-          slug: "bootstrap 4",
-          status: "active",
-          image: 'https://via.placeholder.com/350x150',
-          description: `CSS framework.`,
-          created_at: "2021-12-21 14:00:00",
-          updated_at: "2021-12-21 14:00:00",
-          expire_date: "2021-12-31 00:00:00",
-        }
     ];
 
 const store = createStore({
