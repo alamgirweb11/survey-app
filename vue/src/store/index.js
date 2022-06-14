@@ -5,7 +5,7 @@ const tempSurveys = [
         {
           id: 1,
           title: "The content has been loaded.",
-          slug: "thecodeholic-youtube-channel-content",
+          slug: "youtube-channel-content",
           status: "draft",
           image: 'https://via.placeholder.com/350x150',
           description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
@@ -32,7 +32,7 @@ const tempSurveys = [
             {
               id: 2,
               type: 'checkbox',
-              question: 'Which language videos do you want to see on my channel?',
+              question: 'Which language videos do you want to see on this channel?',
               description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque earum eos esse est ex facilis, iure laboriosam maiores neque nesciunt nulla placeat praesentium quae quos ratione, recusandae totam velit!',
               data: {
                 options: [
@@ -47,7 +47,7 @@ const tempSurveys = [
             {
               id: 3,
               type: 'checkbox',
-              question: 'Which PHP framework videos do you want to see on my channel?',
+              question: 'Which PHP framework videos do you want to see on  this channel?',
               description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque earum eos esse est ex facilis, iure laboriosam maiores neque nesciunt nulla placeat praesentium quae quos ratione, recusandae totam velit!',
               data: {
                 options: [
@@ -75,7 +75,7 @@ const tempSurveys = [
             {
               id: 5,
               type: 'checkbox',
-              question: 'What type of projects do you want to see on my channel built with Laravel?',
+              question: 'What type of projects do you want to see on this channel built with Laravel?',
               description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cumque earum eos esse est ex facilis, iure laboriosam maiores neque nesciunt nulla placeat praesentium quae quos ratione, recusandae totam velit!',
               data: {
                 options: [
@@ -89,7 +89,7 @@ const tempSurveys = [
             {
               id: 6,
               type: 'text',
-              question: 'What do you think about TheCodeholic channel?',
+              question: 'What do you think about  this channel?',
               description: 'Write your honest opinion. Everything is anonymous.',
               data: null
             },
