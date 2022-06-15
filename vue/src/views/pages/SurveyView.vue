@@ -168,11 +168,13 @@
 <script setup>
 import { v4 as uuidv4 } from "uuid";
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import store from "../../store";
 
 import PageContent from "../../components/PageContent.vue";
 import QuestionEditor from "../../components/editor/QuestionEditor.vue";
+
+const router = useRouter();
 
 const route = useRoute();
 
@@ -215,6 +217,17 @@ function questionChange(question){
       }
       return q;
     })
+}
+/**
+ * create or update survey
+ */
+function saveSurvey(){
+   store.dispatch("saveSurvey", model.value).then(({data}) => {
+      router.push({
+         name: "SurveyView",
+         params: {id: data.data.id},
+      });
+   });
 }
 </script>
 <style lang=""></style>
