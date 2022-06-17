@@ -15,6 +15,7 @@ class Survey extends Model
          [
             'user_id',
             'title',
+            'image',
             'slug',
             'status',
             'description',
