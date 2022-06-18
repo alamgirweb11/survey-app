@@ -204,7 +204,12 @@ const store = createStore({
                     return res;
                   });
                  }
-               }
+               },
+
+          // delete survey
+          deleteSurvey({}, id){
+              return axiosClient.delete(`/survey/${id}`);
+          }
        },
 
        mutations: {
