@@ -16,6 +16,14 @@ const store = createStore({
                data: []  
           },
           questionTypes: ['text', 'select', 'radio', 'checkbox', 'textarea'],
+          notification: {
+              show: false,
+              type: null,
+              message: null,     
+              // show: true,
+              // type: 'success',
+              // message: 'Notification',     
+          },
        },
        getters: {},
 
@@ -78,6 +86,8 @@ const store = createStore({
                     return res;
                   });
                  }
+
+                 return response;
                },
 
           // delete survey
@@ -123,7 +133,18 @@ const store = createStore({
 
          setSurveys:(state, surveys) => {
                     state.surveys.data = surveys.data;
-         }
+         },
+
+          // notification
+          notify:(state, {type, message}) => {
+            state.notification.show = true;
+            state.notification.type = type;
+            state.notification.message = message;
+            setTimeout(() => {
+               state.notification.show = false;
+            }, 3000);
+         },
+
        },
        
        modules: {},
