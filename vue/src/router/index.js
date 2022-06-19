@@ -6,6 +6,7 @@ import Login from '../views/auth/Login.vue'
 import Register from '../views/auth/Register.vue'
 import Surveys from '../views/pages/Surveys.vue'
 import SurveyView from '../views/pages/SurveyView.vue'
+import SurveyPublicView from '../views/SurveyPublicView.vue'
 import store from "../store";
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
                        {path: '/surveys/create', name: 'SurveyCreate', component: SurveyView},
                        {path: '/surveys/:id', name: 'SurveyView', component: SurveyView},
                ]
+        },
+        {
+                path: '/view/survey/:slug',
+                name: 'SurveyPublicView',
+                component: SurveyPublicView
         },
         {
               path: '/auth',
