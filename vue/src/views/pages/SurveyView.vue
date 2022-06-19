@@ -155,6 +155,7 @@
                 <QuestionEditor
                 :question="question"
                 :index="index"
+                @change="questionChange"
                 @addQuestion="addQuestion"
                 @deleteQuestion="deleteQuestion"
                 />
