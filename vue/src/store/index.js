@@ -121,6 +121,11 @@ const store = createStore({
             throw err;
           })
         },
+
+        // save questions answer from public page
+        saveSurveyAnswer({commit}, {surveyId, answers}){
+           return axiosClient.post(`/survey/${surveyId}/answer`, {answers});   
+        },
       },
 
        mutations: {

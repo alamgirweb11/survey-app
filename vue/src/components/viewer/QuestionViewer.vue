@@ -104,6 +104,16 @@
     model = ref({});
   }
 
+  function onCheckboxChange($event){
+       const selectOptions = [];
+       for(let text in model.value){
+          if(model.value[text]){
+                selectOptions.push(text);
+          }
+       }
+       emits("update:modelValue", selectOptions);
+  }
+
 </script>
 <style scoped>
 
