@@ -6,7 +6,7 @@ use DateTime;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\URL;
 
-class SurveyResource extends JsonResource
+class SurveyDashboardResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -22,11 +22,10 @@ class SurveyResource extends JsonResource
             'image_url' =>  $this->image ? URL::to($this->image) : null,
             'slug' => $this->slug,
             'status' => $this->status !== 'draft',
-            'description' => $this->description,
-            'created_at' => (new DateTime($this->created_at))->format('d-m-Y H:i:s a'),
-            'updated_at' => (new DateTime($this->updated_at))->format('d-m-Y H:i:s a'),
-            'expire_date' => $this->expire_date,
-            'questions' => SurveyQuestionResource::collection($this->questions)
+            'created_at' => (new DateTime($this->created_at))->format('d-m-Y h:i:s a'),
+            'expire_date' => (new DateTime($this->expire_date))->format('d-m-Y h:i:s a'),
+            'questions' => $this->questions->count(),
+            'answers' => $this->answers->count(),
         ];
     }
 }

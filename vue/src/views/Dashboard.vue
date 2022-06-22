@@ -28,8 +28,23 @@
             </div>
 
             <div class="flex justify-between text-sm mb-1">
+               <div>Expire Date:</div>
+               <div>{{ data.latest_survey.expire_date }}</div>
+            </div>
+
+            <div class="flex justify-between text-sm mb-1">
+               <div>Status:</div>
+               <div>{{ data.latest_survey.status == 1 ? 'Active' : 'Draft' }}</div>
+            </div>
+
+            <div class="flex justify-between text-sm mb-1">
+               <div>Questions:</div>
+               <div>{{ data.latest_survey.questions }}</div>
+            </div>
+
+            <div class="flex justify-between text-sm mb-1">
                <div>Answers:</div>
-               <div>{{ data.total_answers }}</div>
+               <div>{{ data.latest_survey.answers }}</div>
             </div>
 
             <div class="flex justify-between">
