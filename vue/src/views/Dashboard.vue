@@ -7,5 +7,15 @@
 </template>
 
 <script setup>
-import PageContent from '../components/PageContent.vue'
+import PageContent from '../components/PageContent.vue';
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+const loading = computed(() => store.state.dashboard.loading);
+const data = computed(() => store.state.dashboard.data);
+
+store.dispatch('getDashboardData');
+
 </script>

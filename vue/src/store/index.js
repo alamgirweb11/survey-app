@@ -7,6 +7,10 @@ const store = createStore({
                   data: {},
                   token: sessionStorage.getItem("TOKEN")
           },
+          dashboard:{
+               loading: false,
+               data: {}
+          },
           currentSurvey:{
                   loading: false,
                   data: {}
@@ -21,9 +25,6 @@ const store = createStore({
               show: false,
               type: null,
               message: null,     
-              // show: true,
-              // type: 'success',
-              // message: 'Notification',     
           },
        },
        getters: {},
@@ -126,6 +127,21 @@ const store = createStore({
         saveSurveyAnswer({commit}, {surveyId, answers}){
            return axiosClient.post(`/survey/${surveyId}/answer`, {answers});   
         },
+
+        // get dashboard data
+        getDashboardData({commit}){
+             commit('dashboardLoading', true);
+             return axiosClient.get(`/dashboard`)
+             .then((res) => {
+                 commit('dashboardLoading',  false);
+                 commit('setDashboardData', res.data);
+                 return res;
+             })
+             .catch(err => {
+               commit('dashboardLoading', false);
+               return err;
+             })
+        },
       },
 
        mutations: {
@@ -167,6 +183,15 @@ const store = createStore({
                state.notification.show = false;
             }, 3000);
          },
+
+         // dashboard
+         dashboardLoading:(state, loading) => {
+             state.dashboard.loading = loading;
+         },
+
+         setDashboardData: (state, data) => {
+           state.dashboard.data = data;
+         }
 
        },
        
